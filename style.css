@@ -4,13 +4,31 @@
   box-sizing: border-box;
 }
 
+:root {
+  --text-color: white;
+  --bg-url: url(/assets/bg-mobile.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.1);
+  --surface-color-hover: rgba(255, 255, 255, 0.05);
+  --highlight-color: rgba(255, 255, 255, 0.2);
+}
+
+.light {
+  --text-color: black;
+  --bg-url: url(/assets/bg-mobile-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+}
+
 body {
-  background: url(/assets/bg-mobile.jpg) no-repeat top center/cover;
+  background: var(--bg-url) no-repeat top center/cover;
 }
 
 body * {
   font-family: "Inter", sans-serif;
-  color: white;
+  color: var(--text-color);
 }
 
 #container {
@@ -50,8 +68,8 @@ ul {
     
     padding: 16px 24px;
     
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
     border-radius: 8px;
 
     backdrop-filter: blur(4px);
@@ -64,8 +82,8 @@ ul {
   }
 
   li a:hover {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid white;
+    background: var(--surface-color-hover)
+    border: 1px solid var(--text-color);
   }
 }
 
@@ -88,7 +106,7 @@ ul {
   }
 
   a:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--highlight-color);
   }
 }
 
